@@ -1,5 +1,4 @@
-SELECT * FROM netflix
-
+-- Amount of shows per type
 SELECT type, count(*)
 FROM netflix
 GROUP BY type
@@ -12,5 +11,9 @@ GROUP BY director
 ORDER BY count(*) DESC
 LIMIT 20
 
-SELECT date_added
-from netflix
+-- Amount of shows or movies added to netflix by year
+SELECT substr(date_added, -4) as "Year", count(*) as "Shows added"
+FROM netflix
+WHERE substr(date_added, -4) IS NOT NULL
+GROUP BY substr(date_added, -4)
+ORDER BY substr(date_added, -4) DESC
