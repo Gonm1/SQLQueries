@@ -1,4 +1,4 @@
-# SQLQueries
+# SQLite
 
 Data sources:
  - Steam data: https://www.kaggle.com/nikdavis/steam-store-games
